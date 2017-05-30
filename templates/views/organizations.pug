@@ -1,0 +1,28 @@
+extends ../layouts/default
+
+block content
+	.container
+		h1 Michigan MeetUps
+
+		each org in organizations
+			.organization
+				.icon
+					img(src=org.icon)
+				.content
+					h2 #{org.name}
+					h4 #{org.location}
+					div
+						a(href="#{org.url}") #{org.url}
+						if org.channelLink
+							p
+								span #{org.channelType}:
+								a(href="#{org.channelLink}")  #{org.channelLink}
+						if org.contactName
+							p
+								span Contact: #{org.contactName}
+								if org.contactEmail
+									span  (
+									a(href="mailto:#{org.contactEmail}")  #{org.contactEmail}
+									span  )
+
+		.organization

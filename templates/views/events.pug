@@ -1,0 +1,19 @@
+extends ../layouts/default
+
+block content
+	.container
+		h1 Upcoming Events
+		
+		each ev in events
+			table.event
+				tr
+					td.icon(width="160px")
+						img(src=ev.org.icon)
+					td.content
+						h2 #{ev.org.name}
+						h4 #{ev.name}
+						div
+							p
+								a(href=ev.url) #{ev.url}
+							p #{ev.location}
+						h6 #{ev.dt}
