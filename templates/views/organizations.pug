@@ -2,7 +2,7 @@ extends ../layouts/default
 
 block content
 	.container
-		h1 Michigan MeetUps
+		h1 Michigan #{orgType}
 
 		each org in organizations
 			.organization
@@ -12,7 +12,7 @@ block content
 					h2 #{org.name}
 					h4 #{org.location}
 					div
-						a(href="#{org.url}") #{org.url}
+						a(href=org.url) #{org.url}
 						if org.channelLink
 							p
 								span #{org.channelType}:

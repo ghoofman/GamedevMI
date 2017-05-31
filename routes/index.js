@@ -38,7 +38,11 @@ exports = module.exports = function (app) {
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
-	app.get('/organizations', routes.views.organizations);
+	app.get('/meetups', routes.views.meetups);
+	app.get('/schools', routes.views.schools);
+	app.get('/companies', routes.views.companies);
+	app.get('/people', routes.views.people);
+	app.get('/presentations', routes.views.presentations);
 	app.get('/events', routes.views.events);
 	app.all('/contact', routes.views.contact);
 

@@ -1,0 +1,36 @@
+extends ../layouts/default
+
+block content
+	.container
+		h1 Michigan #{orgType}
+
+		each org in organizations
+			table.person
+				tr
+					td.hidden-xs.icon(width="160px")
+						img(src=org.icon)
+					td.content
+						h2 #{org.name.first} #{org.name.last}
+						h4 #{org.location}
+						if org.discord
+							p
+								span
+									img(src="/images/discord_icon.png")
+								span  #{org.discord}
+						div
+							a(href="#{org.url}") #{org.url}
+							if org.bio
+								div
+									!= org.bio
+						div
+							if org.linkOne
+								p
+									a(href=org.linkOne.url) #{org.linkOne.title}
+							if org.linkTwo
+								p
+									a(href=org.linkTwo.url) #{org.linkTwo.title}
+							if org.linkThree
+								p
+									a(href=org.linkThree.url) #{org.linkThree.title}
+
+		.organization

@@ -1,0 +1,23 @@
+extends ../layouts/default
+
+block content
+	.container
+		h1 Presentations
+
+		each ev in events
+			table.event
+				tr
+					td.icon(width="160px")
+						img(src=ev.org.icon)
+					td.content
+						h2 #{ev.org.name} - #{ev.name}
+						h6 #{ev.dt}
+						div
+							.videoWrapper
+								<iframe width="853" height="480" src="https://www.youtube.com/embed/#{ev.video}?rel=0&amp;controls=0&amp;showinfo=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+							if ev.url
+								p
+									a(href=ev.url) #{ev.url}
+							.description
+								!= ev.description
+							p #{ev.location}

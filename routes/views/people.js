@@ -4,19 +4,22 @@ exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
+	locals.orgType = 'People';
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.section = 'organizations';
+	locals.section = 'people';
 
 	// Load the posts
 	view.on('init', function (next) {
 
-		keystone.list('Organization').model.find().sort('name').exec(function (err, results) {
+		keystone.list('User').model.find().sort('name').exec(function (err, results) {
 
 			if (err || !results.length) {
 				return next(err);
 			}
+
+			results = results.filter(u => !u.isAdmin);
 
 			locals.organizations = results;
 
@@ -25,5 +28,5 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Render the view
-	view.render('organizations');
+	view.render('people');
 };

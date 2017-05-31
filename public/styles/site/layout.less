@@ -28,6 +28,7 @@
 
 .event {
     padding: 15px;
+	margin-top: 15px;
     .icon {
         float:left;
         img {
@@ -38,6 +39,9 @@
     .content {
         float: left;
     }
+	.description {
+		padding: 10px;
+	}
     clear:both;
 }
 
@@ -54,4 +58,30 @@
         float: left;
     }
     clear:both;
+}
+
+.person {
+    padding: 15px;
+    .icon {
+		vertical-align: top;
+        img {
+            width: 100px;
+            margin: 20px;
+        }
+    }
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 52%; /*56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+
+	iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }

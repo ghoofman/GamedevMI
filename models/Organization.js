@@ -11,6 +11,7 @@ var Organization = new keystone.List('Organization', {
 
 Organization.add({
 	name: { type: String, required: true },
+	orgType: { type: String },
 	icon: { type: String },
 	location: { type: String },
 	url: { type: String },

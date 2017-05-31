@@ -11,6 +11,13 @@ User.add({
 	name: { type: Types.Name, required: true, index: true },
 	email: { type: Types.Email, initial: true, required: true, unique: true, index: true },
 	password: { type: Types.Password, initial: true, required: true },
+	bio: { type: Types.Html, wysiwyg: true, height: 400 },
+	icon: { type: String },
+	location: { type: String },
+	discord: { type: String },
+	linkOne: {  title: { type: String }, url: { type: String } },
+	linkTwo: {  title: { type: String }, url: { type: String } },
+	linkThree: {  title: { type: String }, url: { type: String } }
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
 });
