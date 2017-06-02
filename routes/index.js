@@ -40,7 +40,7 @@ exports = module.exports = function (app) {
 	app.get('/gallery', routes.views.gallery);
 	app.get('/meetups', routes.views.meetups);
 	app.get('/schools', routes.views.schools);
-	app.get('/companies', routes.views.companies);
+	app.get('/studios', routes.views.studios);
 	app.get('/people', routes.views.people);
 	app.get('/presentations', routes.views.presentations);
 	app.get('/events', routes.views.events);
