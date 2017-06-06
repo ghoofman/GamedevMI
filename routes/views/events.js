@@ -30,7 +30,7 @@ exports = module.exports = function (req, res) {
 				ev.datetime.getFullYear() + ', ' +
 				(ev.datetime.getHours() % 12) + ':' +
 				('0' + ev.datetime.getMinutes()).slice(-2) + '' +
-				(ev.datetime.getHours() >= 12 ? 'PM' : 'AM')) + ' EST';
+				(ev.datetime.getHours() >= 12 ? 'PM' : 'AM') + ' EST');
 
 			async.each(locals.events, function (ev, n) {
 				console.log(ev);
