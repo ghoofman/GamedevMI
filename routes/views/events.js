@@ -34,7 +34,7 @@ exports = module.exports = function (req, res) {
 					(dt.getHours() >= 12 ? 'pm' : am);
 			}
 
-			locals.events.map(ev => ev.dt = formatDT(ev));
+			locals.events.map(ev => ev.dt = formatDT(ev.datetime));
 
 			async.each(locals.events, function (ev, n) {
 				console.log(ev);
