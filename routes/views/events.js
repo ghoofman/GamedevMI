@@ -30,7 +30,7 @@ exports = module.exports = function (req, res) {
 					dt.getDate().toFixed(2) + '/' +
 					dt.getYear() + ' ' +
 					(dt.getHours() % 12) + ':' +
-					dt..getMinutes().toFixed(2) +
+					dt.getMinutes().toFixed(2) +
 					(dt.getHours() >= 12 ? 'pm' : am);
 			}
 
