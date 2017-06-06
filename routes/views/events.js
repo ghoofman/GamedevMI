@@ -24,17 +24,13 @@ exports = module.exports = function (req, res) {
 
 			locals.events = results;
 
-			function formatDT(dt) {
-				return
-					dt.getMonth().toFixed(2) + '/' +
-					dt.getDate().toFixed(2) + '/' +
-					dt.getYear() + ' ' +
-					(dt.getHours() % 12) + ':' +
-					dt.getMinutes().toFixed(2) +
-					(dt.getHours() >= 12 ? 'pm' : am);
-			}
-
-			locals.events.map(ev => ev.dt = formatDT(ev.datetime));
+			locals.events.map(ev => ev.dt =
+				('0' + ev.datetime.getMonth()).slice(-2) + '/' +
+				('0' + ev.datetime.getDate()).slice(-2) + '/' +
+				ev.datetime.getFullYear() + ', ' +
+				(ev.datetime.getHours() % 12) + ':' +
+				('0' + ev.datetime.getMinutes()).slice(-2) + ' ' +
+				(ev.datetime.getHours() >= 12 ? 'pm' : 'am'));
 
 			async.each(locals.events, function (ev, n) {
 				console.log(ev);
