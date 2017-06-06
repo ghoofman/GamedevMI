@@ -24,7 +24,17 @@ exports = module.exports = function (req, res) {
 
 			locals.events = results;
 
-			locals.events.map(ev => ev.dt = ev.datetime.toLocaleString());
+			function formatDT(dt) {
+				return
+					dt.getMonth().toFixed(2) + '/' +
+					dt.getDate().toFixed(2) + '/' +
+					dt.getYear() + ' ' +
+					(dt.getHours() % 12) + ':' +
+					dt..getMinutes().toFixed(2) +
+					(dt.getHours() >= 12 ? 'pm' : am);
+			}
+
+			locals.events.map(ev => ev.dt = formatDT(ev));
 
 			async.each(locals.events, function (ev, n) {
 				console.log(ev);
