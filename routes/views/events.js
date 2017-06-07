@@ -25,7 +25,7 @@ exports = module.exports = function (req, res) {
 			locals.events = results;
 
 			locals.events.map(ev => ev.dt =
-				('0' + ev.datetime.getMonth()).slice(-2) + '/' +
+				('0' + (ev.datetime.getMonth() + 1)).slice(-2) + '/' +
 				('0' + ev.datetime.getDate()).slice(-2) + '/' +
 				ev.datetime.getFullYear() + ', ' +
 				(ev.datetime.getHours() % 12) + ':' +
