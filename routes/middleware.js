@@ -22,11 +22,11 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'Jobs', key: 'jobs', href: '/jobs' },
 		{ label: 'Meetups', key: 'meetups', href: '/meetups' },
-		{ label: 'Events', key: 'events', href: '/events' },
+		//{ label: 'Events', key: 'events', href: '/events' },
 		{ label: 'Presentations', key: 'presentations', href: '/presentations' },
 		{ label: 'Studios', key: 'studios', href: '/studios' },
-		{ label: 'Schools', key: 'schools', href: '/schools' },
-		{ label: 'People', key: 'people', href: '/people' }
+		{ label: 'Schools', key: 'schools', href: '/schools' }
+		//{ label: 'People', key: 'people', href: '/people' }
 	];
 	res.locals.user = req.user;
 	next();
