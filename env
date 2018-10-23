@@ -1,0 +1,7 @@
+PORT=17000
+MONGO_URI=mongodb://gamedevmi:gamedevmi@ds143131.mlab.com:43131/gamedevmi
+COOKIE_SECRET=a8ab76541c6b18e7e0c2853883aedee85d06fc74ade38964b6da355bdc630dc5695c8e25249dcb6998226f4024f28ee8e321cc16d50f5249300cf97efc4d0fcc
+CLOUDINARY_URL=cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo
+
+# You will need to provide a MAILGUN_API_KEY and MAILGUN_DOMAIN to
+# get email sending working.
